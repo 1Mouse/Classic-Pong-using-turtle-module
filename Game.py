@@ -1,5 +1,16 @@
 import turtle
 
+###they didn't work so I used pygame
+#from playsound import playsound
+#import winsound
+#winsound.PlaySound("retro.wav", winsound.SND_FILENAME|winsound.SND_ASYNC)
+
+#just for music
+import pygame 
+pygame.init()
+music=pygame.mixer.music.load("retro.wave")
+pygame.mixer.music.play(-1)
+
 # initializing screen, its coordinates is like normal maths
 wind = turtle.Screen()
 wind.title("Ping Pong")  # screen title
@@ -122,6 +133,7 @@ while True:
     if(Ball.xcor() > 340 and Ball.xcor() < 350) and (Ball.ycor() < Player2.ycor()+40 and Ball.ycor() > Player2.ycor()-40):
         Ball.setx(340)
         Ball.dx *= -1
+
 
     # Collision between the Ball and Player1
     if(Ball.xcor() < -340 and Ball.xcor() > -350) and (Ball.ycor() < Player1.ycor()+40 and Ball.ycor() > Player1.ycor()-40):
